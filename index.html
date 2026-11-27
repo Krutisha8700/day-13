@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 13 - CSS Box Model and Spacing</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Day 13: CSS Box Model and Spacing</h1>
+        <p>Learning CSS Box Model, Padding, Margin and Borders.</p>
+    </header>
+
+    <main>
+
+        <!-- Task 1: Box Anatomy -->
+        <section>
+            <h2>Task 1: Box Anatomy</h2>
+            <div class="box">Content Box</div>
+        </section>
+
+        <!-- Task 2: Box Sizing -->
+        <section>
+            <h2>Task 2: Box Sizing</h2>
+            <div class="box-border-box">Border Box</div>
+        </section>
+
+        <!-- Task 3: Padding Shorthand -->
+        <section>
+            <h2>Task 3: Padding Shorthand</h2>
+            <div class="padding-box padding-one">Padding 10px</div>
+            <div class="padding-box padding-two">Padding 10px 30px</div>
+            <div class="padding-box padding-three">Padding 10px 30px 20px</div>
+            <div class="padding-box padding-four">Padding 5px 10px 15px 20px</div>
+        </section>
+
+        <!-- Task 4: Centering with Max Width -->
+        <section>
+            <h2>Task 4: Centering with Max Width</h2>
+            <div class="container">
+                Responsive Container (Max Width 600px)
+            </div>
+            <div class="fixed-container">
+                Fixed Width Container (600px)
+            </div>
+        </section>
+
+        <!-- Task 5: Margin Collapsing -->
+        <section>
+            <h2>Task 5: Margin Collapsing</h2>
+            <p class="first-para">This is the first paragraph.</p>
+            <p class="second-para">This is the second paragraph.</p>
+        </section>
+
+        <!-- Task 6: Inline vs Block -->
+        <section>
+            <h2>Task 6: Inline vs Block</h2>
+
+            <h3>Inline Spans</h3>
+            <span class="inline-span">Span One</span>
+            <span class="inline-span">Span Two</span>
+            <span class="inline-span">Span Three</span>
+
+            <h3>Inline Block Spans</h3>
+            <span class="inline-block-span">Span One</span>
+            <span class="inline-block-span">Span Two</span>
+            <span class="inline-block-span">Span Three</span>
+
+            <h3>Link as Button</h3>
+            <a href="#form-section" class="button-link">Click Here</a>
+        </section>
+
+        <!-- Task 7: Borders, Radius and Shadow -->
+        <section>
+            <h2>Task 7: Borders, Radius and Shadow</h2>
+            <div class="card">
+                <h3>My CSS Card</h3>
+                <p>This card demonstrates border, radius and box shadow.</p>
+            </div>
+
+            <div class="circle"></div>
+        </section>
+
+        <!-- Task 8: Form Spacing -->
+        <section id="form-section">
+            <h2>Task 8: Form Spacing</h2>
+
+            <h3>Without Border Box</h3>
+            <form class="form-without">
+                <div class="field">
+                    <label>Name</label>
+                    <input type="text" placeholder="Enter your name">
+                </div>
+                <div class="field">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter password">
+                </div>
+            </form>
+
+            <h3>With Border Box</h3>
+            <form class="form-fixed">
+                <div class="field">
+                    <label>Name</label>
+                    <input type="text" placeholder="Enter your name">
+                </div>
+                <div class="field">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter password">
+                </div>
+            </form>
+        </section>
+
+        <!-- Task 9: Debug Challenge -->
+        <section>
+            <h2>Task 9: Debug Challenge</h2>
+            <div class="debug-card">
+                <h3>Fixed Debug Card</h3>
+                <p>All six CSS mistakes are corrected.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Day 13 CSS Practical Task Completed.</p>
+    </footer>
+
+</body>
+</html>

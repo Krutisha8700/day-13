@@ -1,0 +1,277 @@
+
+/* Day 13: CSS Box Model and Spacing */
+
+/* Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+header, footer {
+    background-color: navy;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 8px;
+}
+
+h2 {
+    color: navy;
+}
+
+
+/* Task 1: Box Anatomy */
+.box {
+    box-sizing: content-box;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 5px solid navy;
+    margin: 30px;
+    background-color: lightblue;
+}
+
+/* Content = 200 x 100px
+   Padding box = 240 x 140px
+   Visible border box = 250 x 150px
+   Total space including margin = 310 x 210px */
+
+
+/* Task 2: Box Sizing */
+.box-border-box {
+    box-sizing: border-box;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 5px solid navy;
+    margin: 30px;
+    background-color: lightgreen;
+}
+
+/* With content-box visible width = 250px.
+   With border-box visible width = 200px.
+   Difference = 50px. */
+
+/* Global reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Explicitly keep the first experiment as content-box */
+.box {
+    box-sizing: content-box;
+}
+
+
+/* Task 3: Padding Shorthand */
+.padding-box {
+    background-color: lightyellow;
+    border: 2px solid orange;
+    margin: 15px 0;
+}
+
+/* Top 10px, Right 10px, Bottom 10px, Left 10px */
+.padding-one {
+    padding: 10px;
+}
+
+/* Top 10px, Right 30px, Bottom 10px, Left 30px */
+.padding-two {
+    padding: 10px 30px;
+}
+
+/* Top 10px, Right 30px, Bottom 20px, Left 30px */
+.padding-three {
+    padding: 10px 30px 20px;
+}
+
+/* Top 5px, Right 10px, Bottom 15px, Left 20px */
+.padding-four {
+    padding: 5px 10px 15px 20px;
+}
+
+
+/* Task 4: Centering with Max Width */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid blue;
+    padding: 15px;
+    background-color: lightcyan;
+}
+
+/* Fixed width may cause horizontal overflow on narrow screens */
+.fixed-container {
+    width: 600px;
+    margin: 20px auto;
+    border: 1px solid red;
+    padding: 10px;
+    background-color: pink;
+}
+
+
+/* Task 5: Margin Collapsing */
+.first-para {
+    margin-bottom: 40px;
+    background-color: lightblue;
+}
+
+.second-para {
+    margin-top: 20px;
+    background-color: lightgreen;
+}
+
+/* Expected gap = 60px (40 + 20).
+   Actual gap = 40px because vertical margins collapse.
+   The larger margin is used. */
+
+
+/* Task 6: Inline vs Block */
+.inline-span {
+    display: inline;
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+    background-color: lightpink;
+}
+
+/* Inline elements ignore width, height and vertical margins. */
+
+.inline-block-span {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+    background-color: lightgreen;
+    text-align: center;
+    padding-top: 15px;
+}
+
+/* Anchor tag styled as a button */
+.button-link {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: navy;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+
+/* Task 7: Borders, Radius and Shadow */
+.card {
+    border: 2px solid gray;
+    border-bottom: 4px solid navy;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: navy;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+
+/* Task 8: Form Spacing */
+
+/* Spacing scale */
+:root {
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 16px;
+    --space-4: 24px;
+}
+
+/* First form without border-box */
+.form-without {
+    box-sizing: content-box;
+    width: 100%;
+}
+
+.field {
+    margin-bottom: var(--space-4);
+}
+
+.field label {
+    display: block;
+    margin-bottom: var(--space-2);
+    font-weight: bold;
+}
+
+.form-without input {
+    box-sizing: content-box;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid gray;
+}
+
+/* Without border-box, input becomes wider than its parent
+   and can cause horizontal overflow. */
+
+/* Fixed form with border-box */
+.form-fixed {
+    width: 100%;
+}
+
+.form-fixed input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid gray;
+}
+
+/* Border-box includes padding and border in the width.
+   No extra horizontal overflow from input width. */
+
+
+/* Task 9: Debug Challenge */
+
+/* Mistake 1: width 300 was missing px.
+   Fixed: width: 300px; */
+
+/* Mistake 2: Padding had five values.
+   Fixed: padding: 10px 20px 30px 40px; */
+
+/* Mistake 3: margin: 0 center was invalid.
+   Fixed: margin: 0 auto; */
+
+/* Mistake 4: Border had incorrect extra values.
+   Fixed: border: 2px solid red; */
+
+/* Mistake 5: border-radius was missing px.
+   Fixed: border-radius: 10px; */
+
+/* Mistake 6: box-sizing: border was invalid.
+   Fixed: box-sizing: border-box; */
+
+.debug-card {
+    width: 300px;
+    padding: 10px 20px 30px 40px;
+    margin: 20px auto;
+    border: 2px solid red;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: lightyellow;
+}
+
+
+/* Responsive adjustment */
+@media (max-width: 650px) {
+    .fixed-container {
+        margin-left: 0;
+    }
+}
